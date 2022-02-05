@@ -1,12 +1,12 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const routerPaginacao = require('./routes/paginacao');
 
 const app = express();
 
-const bodyParser = require('body-parser');
-
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => res.json({ message: 'servidor funcionando' }));
+app.use('/paginacao', routerPaginacao);
 
 app.listen(3000, () => {
   console.log('O pai ta on!');
