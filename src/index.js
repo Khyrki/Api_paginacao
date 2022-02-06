@@ -4,6 +4,8 @@ const routerPaginacao = require('./routes/paginacao');
 
 const app = express();
 
+const PORT = 3000;
+
 app.use(bodyParser);
 
 app.use('/paginacao', routerPaginacao);
@@ -14,6 +16,6 @@ app.use((err, _req, res, _next) => {
   res.status(err.code ? err.code : internalError).json({ message: err.message });
 });
 
-app.listen(3000, () => {
-  console.log('O pai ta on!');
+app.listen(PORT, () => {
+  console.log(`App rodando na porta ${PORT}`);
 });
