@@ -24,9 +24,9 @@ const paginacaoValidacao = (req, res, next) => {
     paginasTotal: Joi.number().integer().min(1).required(),
   }).validate(req.body);
 
-  validacoesAdicionais(req.body, next);
-
   if (error) next(error);
+
+  validacoesAdicionais(req.body, next);
 
   return next();
 };
