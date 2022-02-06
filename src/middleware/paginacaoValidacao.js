@@ -8,6 +8,14 @@ const validacoesAdicionais = ({ paginaAtual, paginasTotal }, next) => {
     };
     next(err);
   }
+
+  if (typeof (paginaAtual) !== 'number' || typeof (paginasTotal) !== 'number') {
+    const err = {
+      code: 400,
+      message: '"paginaAtual" and "paginasTotal" must be numbers',
+    };
+    next(err);
+  }
 };
 
 const paginacaoValidacao = (req, res, next) => {
