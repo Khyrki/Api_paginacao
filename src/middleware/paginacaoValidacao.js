@@ -4,13 +4,13 @@ const validacoesAdicionais = ({ paginaAtual, paginasTotal }, next) => {
   if (paginaAtual > paginasTotal) {
     const err = {
       code: 400,
-      message: 'paginaAtual cant be greater then paginasTotal',
+      message: '"paginaAtual" cant be greater then "paginasTotal"',
     };
     next(err);
   }
 };
 
-const paginacaoValidation = (req, res, next) => {
+const paginacaoValidacao = (req, res, next) => {
   const { error } = Joi.object({
     paginaAtual: Joi.number().integer().min(1).required(),
     paginasTotal: Joi.number().integer().min(1).required(),
@@ -23,4 +23,4 @@ const paginacaoValidation = (req, res, next) => {
   return next();
 };
 
-module.exports = paginacaoValidation;
+module.exports = paginacaoValidacao;

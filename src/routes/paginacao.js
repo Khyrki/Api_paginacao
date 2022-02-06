@@ -1,7 +1,9 @@
 const express = require('express');
+const paginacaoValidacao = require('../middleware/paginacaoValidacao');
+const paginacaoController = require('../controllers/paginacaoController');
 
 const router = express.Router();
 
-router.get('/', (req, res) => res.json({ message: 'Rota paginacao funcionando' }));
+router.get('/', paginacaoValidacao, paginacaoController);
 
 module.exports = router;
