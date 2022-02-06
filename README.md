@@ -21,4 +21,4 @@ São feitas algumas validações em que o usuário deve se atentar, como por exe
 
 Caso alguma dessas regras seja violada o usuário receberá como resposta da requisição um status code 400 e uma mensagem com mais detalhes do erro.
 
-Para rodar os teste da aplicação basta executar o comando `npm test`.
+Para rodar os testes da aplicação basta executar o comando `npm test`.
