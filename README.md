@@ -12,7 +12,7 @@ Clone o projeto para sua máquina, acesse a pasta do projeto e rode o comando `n
 
 Com a aplicação rodando já é possível realizar requisições para Api. O usuário deve informar a atual e o total de páginas em um método GET para a o endpoint 'localhost:3000/paginacao', assim como mostra a imagem:
 
-![image](imagens/exemplo_requisicao1.png)
+![image](imagens/exemplo_requisicao.png)
 
 São feitas algumas validações em que o usuário deve se atentar, como por exemplo:
 * As chaves "paginaAtual" e "paginasTotal" são obrigatorias.
