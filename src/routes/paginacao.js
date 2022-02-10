@@ -1,6 +1,6 @@
 const express = require('express');
+const paginacaoController = require('../controller/paginacaoController');
 const paginacaoValidacao = require('../middleware/paginacaoValidacao');
-const paginacaoController = require('../controllers/paginacaoController');
 
 const router = express.Router();
 

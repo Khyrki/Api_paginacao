@@ -1,8 +1,4 @@
-const { v4: uuidv4 } = require('uuid');
-
-const paginacaoController = (req, res, _next) => {
-  const { paginaAtual, paginasTotal } = req.body;
-
+const paginacaoService = (paginaAtual, paginasTotal) => {
   let result = [];
 
   for (let index = 1; index <= paginasTotal; index += 1) {
@@ -44,7 +40,8 @@ const paginacaoController = (req, res, _next) => {
       result = newResult;
     }
   }
-  return res.status(200).json({ id: uuidv4(), paginacao: result });
+
+  return result;
 };
 
-module.exports = paginacaoController;
+module.exports = paginacaoService;

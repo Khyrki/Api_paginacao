@@ -12,7 +12,7 @@ describe('GET /paginacao', () => {
   describe('Teste validacoes sem "paginalAtual"', () => {
     let response;
     before(async () => {
-      response = await chai.request('http://localhost:3000')
+      response = await chai.request(app)
         .get('/paginacao')
         .send({
           "paginasTotal": 2
@@ -27,7 +27,7 @@ describe('GET /paginacao', () => {
   describe('Teste validacoes sem "paginasTotal"', () => {
     let response;
     before(async () => {
-      response = await chai.request('http://localhost:3000')
+      response = await chai.request(app)
         .get('/paginacao')
         .send({
           "paginaAtual": 2
@@ -43,7 +43,7 @@ describe('GET /paginacao', () => {
   describe('Teste validacoes passando "paginalAtual" maior que "paginasTotal"', () => {
     let response;
     before(async () => {
-      response = await chai.request('http://localhost:3000')
+      response = await chai.request(app)
         .get('/paginacao')
         .send({
           "paginaAtual": 4,
@@ -60,7 +60,7 @@ describe('GET /paginacao', () => {
   describe('Teste retorno da api', () => {
     let response;
     before(async () => {
-      response = await chai.request('http://localhost:3000')
+      response = await chai.request(app)
         .get('/paginacao')
         .send({
           "paginaAtual": 5,
