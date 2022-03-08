@@ -12,21 +12,21 @@ const paginacaoService = (paginaAtual, paginasTotal) => {
   const index = result.indexOf(`**${paginaAtual}**`);
 
   if (paginaAtual > 5 || paginasTotal > 5) {
-    if (!result[index - 2]) {
+    if (!result[index - 3]) {
       const newResult = result.slice(0, 5);
       newResult.push('...');
 
       result = newResult;
     }
 
-    if (!result[index + 2]) {
-      const newResult = result.slice(result[result.length - 6], result[result.length + 1]);
+    if (!result[index + 3]) {
+      const newResult = result.slice(result.length - 5, result.length + 1);
       newResult.unshift('...');
 
       result = newResult;
     }
 
-    if (result[index + 2] && result[index - 2]) {
+    if (result[index + 3] && result[index - 3]) {
       const newResult = result.slice(index - 2, index + 3);
 
       if (newResult[0] !== '1') {
