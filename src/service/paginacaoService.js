@@ -29,13 +29,9 @@ const paginacaoService = (paginaAtual, paginasTotal) => {
     if (result[index + 3] && result[index - 3]) {
       const newResult = result.slice(index - 2, index + 3);
 
-      if (newResult[0] !== '1') {
-        newResult.unshift('...');
-      }
+      newResult.unshift('...');
 
-      if (newResult[newResult.length - 1] !== result[result.length - 1]) {
-        newResult.push('...');
-      }
+      newResult.push('...');
 
       result = newResult;
     }
